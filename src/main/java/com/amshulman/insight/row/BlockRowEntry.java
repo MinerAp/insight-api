@@ -33,7 +33,7 @@ public final class BlockRowEntry extends RowEntry {
     }
 
     public BlockRowEntry(@Nonnegative long datetime, @Nonnull String actor, @Nonnull BlockAction action, @Nonnull BlockState blockState, @Nullable MetadataEntry metadata) {
-        super(datetime, actor, action, blockState.getX(), blockState.getY(), blockState.getZ());
+        super(datetime, actor, action, blockState.getWorld().getName(), blockState.getX(), blockState.getY(), blockState.getZ());
 
         this.block = blockState;
         this.previousBlock = null;

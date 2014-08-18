@@ -16,7 +16,7 @@ public final class EntityRowEntry extends RowEntry {
     String actee;
 
     public EntityRowEntry(@Nonnegative long datetime, @Nonnull String actor, @Nonnull EntityAction action, @Nonnull Location loc, @Nonnull String actee) {
-        super(datetime, actor, action, (int) loc.getX(), (int) loc.getY(), (int) loc.getZ());
+        super(datetime, actor, action, loc.getWorld().getName(), (int) loc.getX(), (int) loc.getY(), (int) loc.getZ());
 
         this.actee = actee;
     }
