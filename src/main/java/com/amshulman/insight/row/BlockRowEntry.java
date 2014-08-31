@@ -21,22 +21,38 @@ public final class BlockRowEntry extends RowEntry {
     MetadataEntry metadata;
 
     public BlockRowEntry(@Nonnegative long datetime, @Nonnull String actor, @Nonnull BlockAction action, @Nonnull Block block) {
-        this(datetime, actor, action, block.getState(), null);
+        this(datetime, actor, action, block.getState(), null, null);
+    }
+
+    public BlockRowEntry(@Nonnegative long datetime, @Nonnull String actor, @Nonnull BlockAction action, @Nonnull Block block, @Nullable BlockState previousBlock) {
+        this(datetime, actor, action, block.getState(), previousBlock, null);
     }
 
     public BlockRowEntry(@Nonnegative long datetime, @Nonnull String actor, @Nonnull BlockAction action, @Nonnull Block block, @Nullable MetadataEntry metadata) {
-        this(datetime, actor, action, block.getState(), metadata);
+        this(datetime, actor, action, block.getState(), null, metadata);
+    }
+
+    public BlockRowEntry(@Nonnegative long datetime, @Nonnull String actor, @Nonnull BlockAction action, @Nonnull Block block, @Nullable BlockState previousBlock, @Nullable MetadataEntry metadata) {
+        this(datetime, actor, action, block.getState(), previousBlock, metadata);
     }
 
     public BlockRowEntry(@Nonnegative long datetime, @Nonnull String actor, @Nonnull BlockAction action, @Nonnull BlockState blockState) {
-        this(datetime, actor, action, blockState, null);
+        this(datetime, actor, action, blockState, null, null);
+    }
+
+    public BlockRowEntry(@Nonnegative long datetime, @Nonnull String actor, @Nonnull BlockAction action, @Nonnull BlockState blockState, @Nullable BlockState previousBlock) {
+        this(datetime, actor, action, blockState, previousBlock, null);
     }
 
     public BlockRowEntry(@Nonnegative long datetime, @Nonnull String actor, @Nonnull BlockAction action, @Nonnull BlockState blockState, @Nullable MetadataEntry metadata) {
+        this(datetime, actor, action, blockState, null, metadata);
+    }
+
+    public BlockRowEntry(@Nonnegative long datetime, @Nonnull String actor, @Nonnull BlockAction action, @Nonnull BlockState blockState, @Nullable BlockState previousBlock, @Nullable MetadataEntry metadata) {
         super(datetime, actor, action, blockState.getWorld().getName(), blockState.getX(), blockState.getY(), blockState.getZ());
 
         this.block = blockState;
-        this.previousBlock = null;
+        this.previousBlock = previousBlock;
         this.metadata = metadata;
     }
 }
