@@ -5,6 +5,7 @@ import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
 import lombok.AccessLevel;
+import lombok.ToString;
 import lombok.experimental.FieldDefaults;
 
 import org.bukkit.block.Block;
@@ -13,6 +14,7 @@ import org.bukkit.block.BlockState;
 import com.amshulman.insight.action.BlockAction;
 import com.amshulman.insight.serialization.MetadataEntry;
 
+@ToString
 @FieldDefaults(level = AccessLevel.PROTECTED, makeFinal = true)
 public final class BlockRowEntry extends RowEntry {
 

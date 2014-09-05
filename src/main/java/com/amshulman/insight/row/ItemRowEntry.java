@@ -4,6 +4,7 @@ import javax.annotation.Nonnegative;
 import javax.annotation.Nonnull;
 
 import lombok.AccessLevel;
+import lombok.ToString;
 import lombok.experimental.FieldDefaults;
 
 import org.bukkit.Location;
@@ -14,6 +15,7 @@ import org.bukkit.inventory.meta.ItemMeta;
 
 import com.amshulman.insight.action.ItemAction;
 
+@ToString
 @FieldDefaults(level = AccessLevel.PROTECTED, makeFinal = true)
 public final class ItemRowEntry extends RowEntry {
 

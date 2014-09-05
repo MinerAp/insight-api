@@ -4,12 +4,14 @@ import javax.annotation.Nonnegative;
 import javax.annotation.Nonnull;
 
 import lombok.AccessLevel;
+import lombok.ToString;
 import lombok.experimental.FieldDefaults;
 
 import org.bukkit.Location;
 
 import com.amshulman.insight.action.EntityAction;
 
+@ToString
 @FieldDefaults(level = AccessLevel.PROTECTED, makeFinal = true)
 public final class EntityRowEntry extends RowEntry {
 
