@@ -4,10 +4,12 @@ import javax.annotation.Nonnegative;
 import javax.annotation.Nonnull;
 
 import lombok.AccessLevel;
+import lombok.ToString;
 import lombok.experimental.FieldDefaults;
 
 import com.amshulman.insight.action.InsightAction;
 
+@ToString
 @FieldDefaults(level = AccessLevel.PROTECTED, makeFinal = true)
 public abstract class RowEntry {
 

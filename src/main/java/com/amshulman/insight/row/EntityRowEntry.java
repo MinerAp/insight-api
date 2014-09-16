@@ -11,7 +11,7 @@ import org.bukkit.Location;
 
 import com.amshulman.insight.action.EntityAction;
 
-@ToString
+@ToString(callSuper = true)
 @FieldDefaults(level = AccessLevel.PROTECTED, makeFinal = true)
 public final class EntityRowEntry extends RowEntry {
 

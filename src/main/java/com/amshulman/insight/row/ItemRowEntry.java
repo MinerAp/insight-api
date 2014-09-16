@@ -15,7 +15,7 @@ import org.bukkit.inventory.meta.ItemMeta;
 
 import com.amshulman.insight.action.ItemAction;
 
-@ToString
+@ToString(callSuper = true)
 @FieldDefaults(level = AccessLevel.PROTECTED, makeFinal = true)
 public final class ItemRowEntry extends RowEntry {
 

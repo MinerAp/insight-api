@@ -14,7 +14,7 @@ import org.bukkit.block.BlockState;
 import com.amshulman.insight.action.BlockAction;
 import com.amshulman.insight.serialization.MetadataEntry;
 
-@ToString
+@ToString(callSuper = true)
 @FieldDefaults(level = AccessLevel.PROTECTED, makeFinal = true)
 public final class BlockRowEntry extends RowEntry {
 
