@@ -23,7 +23,7 @@ public abstract class RowEntry {
     int y;
     int z;
 
-    public RowEntry(@Nonnegative long datetime, @Nonnull String actor, @Nonnull InsightAction action, String world, int x, int y, int z) {
+    public RowEntry(@Nonnegative long datetime, @Nonnull String actor, @Nonnull InsightAction action, @Nonnull String world, int x, int y, int z) {
         this.datetime = datetime;
         this.actor = actor;
         this.action = action.getName();
