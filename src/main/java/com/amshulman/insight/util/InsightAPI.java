@@ -4,7 +4,7 @@ import javax.annotation.Nonnull;
 
 import com.amshulman.insight.row.RowEntry;
 
-public interface InsightPlugin {
+public interface InsightAPI {
 
     public void logEvent(@Nonnull RowEntry row);
 }

@@ -7,20 +7,20 @@ import org.bukkit.event.Listener;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import com.amshulman.insight.row.RowEntry;
-import com.amshulman.insight.util.InsightPlugin;
+import com.amshulman.insight.util.InsightAPI;
 
 public abstract class BaseEventHandler<T extends Event> implements Listener {
 
-    private final InsightPlugin pluginInstance;
+    private final InsightAPI pluginInstance;
 
     protected BaseEventHandler() {
-        pluginInstance = (InsightPlugin) JavaPlugin.getProvidingPlugin(InsightPlugin.class);
+        pluginInstance = (InsightAPI) JavaPlugin.getProvidingPlugin(InsightAPI.class);
     }
 
     /**
      * For internal use only
      */
-    BaseEventHandler(@Nonnull InsightPlugin pluginInstance) {
+    BaseEventHandler(@Nonnull InsightAPI pluginInstance) {
         assert (pluginInstance != null);
         this.pluginInstance = pluginInstance;
     }
