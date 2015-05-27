@@ -22,12 +22,6 @@ public class InsightRecord<T extends InsightAction> {
 
     public boolean rollback(boolean force) {
         RollbackAction<T> rollbackAction = action.getRollbackAction();
-
-        if (rollbackAction == null) { // DEBUG
-            System.out.println(action + " has no defined rollback method. Skipping " + toString());
-            return false;
-        }
-
         return rollbackAction.rollback(this, force);
     }
 }
