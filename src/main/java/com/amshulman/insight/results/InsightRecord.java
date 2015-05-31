@@ -6,6 +6,7 @@ import lombok.Value;
 
 import com.amshulman.insight.action.InsightAction;
 import com.amshulman.insight.action.InsightAction.RollbackAction;
+import com.amshulman.insight.action.InsightAction.RollbackActionStatus;
 import com.amshulman.insight.serialization.StorageMetadata;
 import com.amshulman.insight.types.InsightLocation;
 import com.amshulman.insight.types.InsightMaterial;
@@ -20,7 +21,7 @@ public class InsightRecord<T extends InsightAction> {
     private final String actee;
     private final StorageMetadata metadata;
 
-    public boolean rollback(boolean force) {
+    public RollbackActionStatus rollback(boolean force) {
         RollbackAction<T> rollbackAction = action.getRollbackAction();
         return rollbackAction.rollback(this, force);
     }
