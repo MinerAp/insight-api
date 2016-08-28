@@ -31,7 +31,7 @@ public final class ItemRowEntry extends RowEntry {
     }
 
     public ItemRowEntry(@Nonnegative long datetime, @Nonnull String actor, @Nonnull ItemAction action, @Nonnull Location loc, @Nonnull ItemStack stack) {
-        super(datetime, actor, action, loc.getWorld().getName(), (int) loc.getX(), (int) loc.getY(), (int) loc.getZ());
+        super(datetime, actor, action, loc.getWorld().getName(), loc.getBlockX(), loc.getBlockY(), loc.getBlockZ());
 
         this.itemType = stack.getType();
         this.damage = stack.getDurability();
