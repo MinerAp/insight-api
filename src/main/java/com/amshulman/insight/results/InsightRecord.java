@@ -1,6 +1,6 @@
 package com.amshulman.insight.results;
 
-import java.util.Date;
+import java.time.LocalDateTime;
 
 import lombok.Value;
 
@@ -13,7 +13,7 @@ import com.amshulman.insight.types.InsightMaterial;
 
 @Value
 public class InsightRecord<T extends InsightAction> {
-    private final Date datetime;
+    private final LocalDateTime datetime;
     private final String actor;
     private final T action;
     private final InsightLocation location;
